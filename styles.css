@@ -333,6 +333,11 @@ main::after {
   object-fit: contain;
 }
 
+.about-comparison .comparison-after {
+  object-fit: cover;
+  object-position: 58% center;
+}
+
 .about-comparison figcaption {
   padding: 9px 6px;
   border-top: 1px solid #86caff26;
