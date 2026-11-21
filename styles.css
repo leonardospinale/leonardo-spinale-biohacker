@@ -153,3 +153,11 @@ body{background:#050e27 url('dna-background.svg') center top / 900px auto repeat
     transform: none;
   }
 }
+
+.services-grid .service-card {
+  box-shadow: 0 0 20px #124dff42, 0 10px 32px #103eff32;
+}
+
+.services-grid .service-card:hover {
+  box-shadow: 0 0 26px #185aff66, 0 14px 36px #103eff45;
+}
