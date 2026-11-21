@@ -229,3 +229,82 @@ main::after {
     background: linear-gradient(165deg, #050e27c7, #050e273b 85%);
   }
 }
+
+.promo-banner {
+  background: linear-gradient(110deg, #102958, #153f78 52%, #102958);
+  border-bottom: 1px solid #62b9ff4d;
+  text-align: center;
+}
+
+.promo-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 10px;
+  padding: 10px 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.promo-content svg {
+  flex: none;
+  color: #95d6ff;
+}
+
+.promo-content span {
+  color: #d5e7fb;
+}
+
+.promo-content:is(:hover, :focus-visible) strong {
+  text-decoration: underline;
+}
+
+.about,
+.services,
+.packages,
+.contact {
+  padding-block: clamp(32px, 6vw, 84px);
+  background: linear-gradient(105deg, #050e2770, #091f4b38);
+}
+
+.section-glass {
+  padding: clamp(18px, 4vw, 48px);
+  border: 1px solid #86caff45;
+  border-radius: var(--panel-radius);
+  background: linear-gradient(145deg, #5eb9ff26, transparent 36%),
+    linear-gradient(125deg, #102a50e8, #08152de0);
+  box-shadow: inset 0 1px 0 #d8f1ff24, 0 18px 52px #01061766;
+  backdrop-filter: blur(8px);
+}
+
+.section-glass.contact-panel {
+  padding-block: clamp(42px, 6vw, 75px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 20px;
+  margin-top: 24px;
+  border-top: 1px solid #86caff26;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-bottom a {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand .brand-mark {
+    transition: transform .5s var(--ease-out), filter .5s var(--ease-out);
+  }
+
+  .brand:is(:hover, :focus-visible) .brand-mark {
+    transform: rotate(-12deg) scale(1.14);
+    filter: drop-shadow(0 0 8px #258cff);
+  }
+}

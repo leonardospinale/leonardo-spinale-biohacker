@@ -26,3 +26,9 @@ if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-
     revealObserver.observe(panel);
   });
 }
+
+const promo = document.querySelector('.promo-banner');
+const promoStart = Date.parse('2026-11-21T00:00:00+01:00');
+const promoEnd = Date.parse('2027-01-07T00:00:00+01:00');
+const now = Date.now();
+promo.hidden = now < promoStart || now >= promoEnd;
