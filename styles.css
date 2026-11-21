@@ -369,7 +369,8 @@ main .description.disclaimer {
   font-size: 15px;
 }
 
-main .description strong,
+main p.description strong,
+.about-content .lead.description strong,
 .package-card li strong {
   color: var(--keyword-color);
   font-weight: 700;
