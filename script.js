@@ -22,7 +22,7 @@ if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.service-card, .package-card, .steps, .contact-panel').forEach(panel => {
+  document.querySelectorAll('.service-card, .package-card, .contact-panel').forEach(panel => {
     revealObserver.observe(panel);
   });
 }
