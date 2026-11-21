@@ -45,24 +45,68 @@
 }
 
 @media (max-width: 720px) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    column-gap: 6px;
+    row-gap: 14px;
+    padding-block: 36px 32px;
+  }
+
   .hero-copy {
-    padding: 65px 0 18px;
+    display: contents;
+  }
+
+  .hero-copy > :not(h1) {
+    grid-column: 1 / -1;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-copy .eyebrow {
+    grid-row: 1;
+    font-size: 10px;
+    letter-spacing: .13em;
+  }
+
+  .hero-copy h1 {
+    grid-area: 2 / 1;
+    z-index: 2;
+    margin: 0;
+    font-size: clamp(27px, 7.3vw, 48px);
+    letter-spacing: -.045em;
+  }
+
+  .hero-copy > p,
+  .hero-stars,
+  .hero-actions {
+    margin: 0;
   }
 
   .hero-art {
+    grid-area: 2 / 2;
     position: relative;
     inset: auto;
-    height: clamp(280px, 80vw, 440px);
-    min-height: 0;
+    align-self: stretch;
+    height: auto;
+    min-height: clamp(156px, 43vw, 286px);
   }
 
   .hero-art .dna {
     height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-art .orbit {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .hero-portrait {
-    right: -10px;
-    width: 100%;
+    right: 0;
+    width: 110%;
     height: 100%;
   }
 }
@@ -244,6 +288,8 @@ main::after {
   justify-content: center;
   gap: 4px 10px;
   padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: .06em;
   font-size: 13px;
   line-height: 1.4;
 }
