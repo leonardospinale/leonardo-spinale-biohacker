@@ -309,3 +309,35 @@ main::after {
     filter: drop-shadow(0 0 8px #258cff);
   }
 }
+
+.about-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 1.4vw, 16px);
+  margin-top: clamp(18px, 3vw, 32px);
+}
+
+.about-comparison figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #86caff45;
+  border-radius: 16px;
+  background: #050e27;
+}
+
+.about-comparison img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+.about-comparison figcaption {
+  padding: 9px 6px;
+  border-top: 1px solid #86caff26;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
