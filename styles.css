@@ -346,3 +346,46 @@ main::after {
   font-weight: 700;
   text-align: center;
 }
+
+:root {
+  --description-font: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --description-color: #e2ecf8;
+  --keyword-color: #8dccff;
+}
+
+main p.description,
+.package-card li {
+  color: var(--description-color);
+  font-family: var(--description-font);
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.65;
+}
+
+.about-content p.lead.description {
+  font-size: clamp(19px, 2vw, 22px);
+}
+
+main .description.disclaimer {
+  font-size: 15px;
+}
+
+main .description strong,
+.package-card li strong {
+  color: var(--keyword-color);
+  font-weight: 700;
+}
+
+.about-content .description {
+  max-width: 62ch;
+}
+
+.package-card li {
+  position: relative;
+  padding-inline-start: 24px;
+}
+
+.package-card li::before {
+  position: absolute;
+  left: 0;
+  margin-right: 0;
+}
