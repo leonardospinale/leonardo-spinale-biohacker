@@ -16,13 +16,13 @@ if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(({ isIntersecting, target }) => {
       if (!isIntersecting) return;
-      target.classList.add('in-view');
-      target.addEventListener('animationend', () => target.classList.remove('in-view'), { once: true });
+      target.classList.remove('awaiting-entry');
       revealObserver.unobserve(target);
     });
   }, { rootMargin: '0px 0px 24px 0px' });
 
   document.querySelectorAll('.service-card, .package-card, .contact-panel').forEach(panel => {
+    panel.classList.add('reveal-panel', 'awaiting-entry');
     revealObserver.observe(panel);
   });
 }

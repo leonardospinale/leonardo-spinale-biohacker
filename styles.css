@@ -113,7 +113,7 @@
 
 :root {
   --panel-radius: 26px;
-  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-out: cubic-bezier(.25, .7, .25, 1);
 }
 
 .service-card,
@@ -133,26 +133,39 @@
 }
 
 @keyframes rise-in {
-  from { opacity: .75; translate: 0 10px; }
+  from { opacity: .72; translate: 0 14px; }
   to { opacity: 1; translate: 0 0; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy,
-  .hero-art,
-  .in-view {
-    animation: rise-in .48s var(--ease-out) backwards;
+  .hero-art {
+    animation: rise-in .85s var(--ease-out) backwards;
+  }
+
+  .reveal-panel:not(.awaiting-entry) {
+    transition: opacity .85s var(--ease-out), translate .85s var(--ease-out),
+      transform .42s var(--ease-out);
+  }
+
+  .reveal-panel.awaiting-entry {
+    opacity: .72;
+    translate: 0 14px;
+  }
+
+  @media (max-width: 720px) {
+    .hero-copy > * {
+      animation: rise-in .85s var(--ease-out) backwards;
+    }
   }
 
   .hero-art {
     animation-delay: .08s;
   }
 
-  .service-card,
-  .package-card,
   .btn,
   .nav-cta {
-    transition: transform .3s var(--ease-out);
+    transition: transform .42s var(--ease-out);
   }
 }
 
@@ -252,8 +265,8 @@ main::after {
 }
 
 @keyframes dna-pan {
-  from { translate: 0 -9vh; }
-  to { translate: 0 9vh; }
+  from { translate: 0 calc(-1 * var(--dna-travel, 9vh)); }
+  to { translate: 0 var(--dna-travel, 9vh); }
 }
 
 @keyframes hero-dna-pan {
@@ -268,7 +281,7 @@ main::after {
 
   main::after {
     background-size: 600px auto;
-    animation: none;
+    --dna-travel: 2.5vh;
   }
 
   .hero-art .dna {
