@@ -32,3 +32,10 @@ const promoStart = Date.parse('2026-11-21T00:00:00+01:00');
 const promoEnd = Date.parse('2027-01-07T00:00:00+01:00');
 const now = Date.now();
 promo.hidden = now < promoStart || now >= promoEnd;
+
+const header = document.querySelector('.header');
+const updateHeaderHeight = () => {
+  document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+};
+updateHeaderHeight();
+if ('ResizeObserver' in window) new ResizeObserver(updateHeaderHeight).observe(header);
