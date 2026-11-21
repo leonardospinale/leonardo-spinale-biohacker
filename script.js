@@ -20,7 +20,7 @@ if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-
       target.addEventListener('animationend', () => target.classList.remove('in-view'), { once: true });
       revealObserver.unobserve(target);
     });
-  }, { threshold: 0.12 });
+  }, { rootMargin: '0px 0px 24px 0px' });
 
   document.querySelectorAll('.service-card, .package-card, .contact-panel').forEach(panel => {
     revealObserver.observe(panel);
