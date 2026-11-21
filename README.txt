@@ -11,7 +11,6 @@ COME PUBBLICARLO SU NETLIFY
 5. Puoi modificare il nome del sito e collegare un dominio dalle impostazioni Netlify.
 
 PRIMA DI PUBBLICARE
-- Sostituisci INSERISCI-LA-TUA-EMAIL@example.com in index.html.
 - Aggiorna la biografia e verifica che descriva correttamente la tua esperienza.
 - Personalizza servizi, pacchetti, prezzi e disponibilità: ora sono esempi.
 - Inserisci dati professionali, privacy policy e informazioni cookie secondo necessità.
